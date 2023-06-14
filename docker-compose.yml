@@ -1,0 +1,15 @@
+version: "3"
+services:
+  postgres-local:
+    image: docker.io/postgres:15-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - postgres-local:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+volumes:
+  postgres-local:
